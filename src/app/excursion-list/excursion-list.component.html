@@ -1,0 +1,10 @@
+<div class="container">
+  <div class="excursion-list">
+    <app-excursion-tile
+      *ngFor="let exc of excursions | filterExc : filters; let i = index"
+      [excursion]="exc"
+      [id]="i"
+    ></app-excursion-tile>
+  </div>
+  <app-filter></app-filter>
+</div>

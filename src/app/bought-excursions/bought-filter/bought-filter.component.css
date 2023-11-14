@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    flex-flow: column nowrap;
+    padding: 10%;
+}
+
+label {
+    font-size: medium;
+    color: rgba(0, 0, 0, 0.6);
+    margin-bottom: 10px;
+
+}
+
+input {
+    margin-bottom: 10px;
+}

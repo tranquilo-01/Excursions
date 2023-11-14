@@ -1,0 +1,19 @@
+.container {
+  padding: 10px;
+}
+
+p {
+  font-size: small;
+  cursor: pointer;
+}
+
+#admin,
+#manager,
+#user,
+#banned {
+  user-select: none;
+}
+
+#email {
+  font-weight: bold;
+}

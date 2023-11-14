@@ -1,0 +1,11 @@
+<div class="dropdown-content dropdown-menu-content">
+  <a *ngFor="let exc of basketData.basket; let i = index">
+    {{ basketData.basket[i].name }} <i class="fa-regular fa-user"></i>
+    {{ basketData.basket[i].placesReserved }}
+    {{ basketData.basket[i].unitPrice | currency }}
+    <button class="delete">
+      <i class="fa-solid fa-xmark" (click)="onDelete(i)"></i>
+    </button>
+  </a>
+  <a>Total price: {{ totalPrice | currency }}</a>
+</div>

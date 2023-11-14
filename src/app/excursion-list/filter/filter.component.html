@@ -1,0 +1,55 @@
+<div class="container">
+  <h1>Filter:</h1>
+  <label for="title">Title: </label>
+  <input type="text" id="title" [(ngModel)]="filters.title" />
+
+  <label for="startDate">Start date: </label>
+  <input type="text" id="startDate" [(ngModel)]="filters.startDate" />
+
+  <label for="endDate">End date: </label>
+  <input type="text" id="endDate" [(ngModel)]="filters.endDate" />
+
+  <label for="minPeople"
+    >Minimum number of people: {{ filters.minPeople }}
+  </label>
+  <input
+    type="range"
+    id="minPeople"
+    [min]="eData.getMinPeople()"
+    [max]="eData.getMaxPeople()"
+    [(ngModel)]="filters.minPeople"
+  />
+
+  <label for="maxPeople"
+    >Maximum number of people: {{ filters.maxPeople }}</label
+  >
+  <input
+    type="range"
+    id="maxPeople"
+    [min]="eData.getMinPeople()"
+    [max]="eData.getMaxPeople()"
+    [(ngModel)]="filters.maxPeople"
+  />
+
+  <label for="minPrice">Minimum price: {{ filters.minPrice }}</label>
+  <input
+    type="range"
+    id="minPrice"
+    [min]="eData.getLowestPrice()"
+    [max]="eData.getHighestPrice()"
+    [(ngModel)]="filters.minPrice"
+  />
+
+  <label for="maxPricee">Maximum price: {{ filters.maxPrice }}</label>
+  <input
+    type="range"
+    id="maxPrice"
+    [min]="eData.getLowestPrice()"
+    [max]="eData.getHighestPrice()"
+    [(ngModel)]="filters.maxPrice"
+  />
+
+  <div *ngFor="let c of eData.getCountries()">
+    <label><input type="checkbox" (change)="countryToggled(c)" />{{ c }}</label>
+  </div>
+</div>

@@ -1,0 +1,62 @@
+<div
+  class="tile-container"
+  [ngStyle]="{
+    opacity: excursion.numberOfPlaces == 0 ? '0.6' : 1,
+    border: getBorder()
+  }"
+  [ngClass]="{
+    'background-red': placesChosen < 10,
+    'background-green': placesChosen >= 10
+  }"
+>
+  <div class="image-container" routerLink="./excursion/{{ id }}">
+    <img src="{{ excursion.imgLink }}" alt="" />
+  </div>
+  <h1 class="title">{{ excursion.name | uppercase }}</h1>
+  <h4 class="country">{{ excursion.country | uppercase }}</h4>
+  <div class="dates">
+    <p class="start-date">{{ excursion.startDate }}</p>
+    <p class="end-date">{{ excursion.endDate }}</p>
+  </div>
+  <div class="places">
+    <p
+      class="number-of-places"
+      [ngStyle]="{ color: excursion.numberOfPlaces < 4 ? 'red' : 'black' }"
+    >
+      <i class="fa-regular fa-user"> {{ excursion.numberOfPlaces }}</i>
+    </p>
+    <p class="price">{{ excursion.price | currency }}</p>
+  </div>
+  <p class="description">{{ excursion.description }}</p>
+
+  <div class="places-chosen">
+    <button
+      class="remove-place"
+      [disabled]="placesChosen <= 0"
+      (click)="onRemovePlace()"
+    >
+      <i class="fa-solid fa-minus"></i>
+    </button>
+    <div class="basket">
+      <p><i class="fa-solid fa-basket-shopping"></i></p>
+      <p>{{ placesChosen }}</p>
+    </div>
+    <button
+      class="add-place"
+      [disabled]="placesChosen >= excursion.numberOfPlaces"
+      (click)="onAddPlace()"
+      [ngStyle]="{
+        color: excursion.numberOfPlaces - placesChosen < 4 ? 'red' : 'black'
+      }"
+    >
+      <i class="fa-solid fa-plus"></i>
+    </button>
+  </div>
+  <button
+    class="add-to-basket"
+    [disabled]="placesChosen == 0"
+    (click)="updateBasket()"
+  >
+    Update basket
+  </button>
+</div>

@@ -1,0 +1,143 @@
+.tile-container {
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    flex-flow: column nowrap;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    padding: 1vw;
+    position: relative;
+}
+
+.tile-container>* {
+    margin: 0;
+}
+
+.title {
+    text-align: center;
+}
+
+.delete {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    border: none;
+    background: transparent;
+    color: rgba(0, 0, 0, 0.4);
+
+}
+
+.image-container {
+    width: 100%;
+}
+
+/* .dates>p {
+    display: inline;
+} */
+
+.dates {
+    width: 80%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.dates>p {
+    margin-top: 0;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    clip-path: circle();
+    margin-bottom: 1vw;
+}
+
+.places {
+    width: 80%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    font-size: x-large;
+    user-select: none;
+
+}
+
+.price {
+    font-weight: lighter;
+}
+
+.description {
+    text-align: center;
+    line-height: 2em;
+    margin-bottom: auto;
+}
+
+
+.basket>p {
+    margin: 0;
+    text-align: center;
+}
+
+button>i {
+    font-size: xx-large;
+}
+
+
+.places-chosen {
+    margin-top: auto !important;
+    height: 50px;
+    width: 80%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.basket>p {
+    font-size: larger;
+}
+
+.places-chosen>button {
+    height: 100%;
+    aspect-ratio: 1/1;
+    border: none;
+    border-radius: 10px;
+}
+
+
+.add-place {
+    margin-left: 10px;
+    background-color: rgb(68, 217, 68);
+}
+
+.remove-place {
+    background-color: rgb(255, 59, 59);
+    margin-right: 10px;
+}
+
+.add-to-basket {
+    margin-top: 1vw !important;
+    border: none;
+    width: 50%;
+    height: 50px;
+    border-radius: 10px;
+    font-size: larger;
+    /* color: white; */
+    font-weight: bold;
+    background-color: rgba(40, 169, 250, 0.7);
+    justify-self: flex-end;
+}
+
+.background-green {
+    background: linear-gradient(120deg, rgba(68, 217, 68, 0.4), rgba(68, 217, 68, 0.2));
+}
+
+.background-red {
+    background: linear-gradient(120deg, rgba(217, 68, 68, 0.6), rgba(217, 68, 68, 0.2));
+}

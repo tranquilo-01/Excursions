@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="persistence-form-container">
+    <form (ngSubmit)="onChangePersistence()" #f="ngForm">
+      <h5>Set your persistence:</h5>
+      <div>
+        <input type="radio" name="pers" id="local" ngModel value="local" />
+        <label for="local">Local</label>
+      </div>
+      <div>
+        <input type="radio" name="pers" id="session" ngModel value="session" />
+        <label for="session">Session</label>
+      </div>
+      <div>
+        <input type="radio" name="pers" id="none" ngModel value="none" />
+        <label for="none">None</label>
+      </div>
+      <button class="submit" [disabled]="!f.dirty" type="submit">Submit</button>
+    </form>
+  </div>
+  <div class="user-list-container">
+    <div *ngFor="let user of users">
+      <app-user-details [user]="user"></app-user-details>
+      <hr />
+    </div>
+  </div>
+</div>

@@ -1,0 +1,123 @@
+.container {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+hr {
+    width: 100%;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+}
+
+.container .slider-container {
+    height: 600px;
+    width: 80vw;
+    gap: 1vw;
+    display: flex;
+    flex-flow: row nowrap;
+    overflow: scroll;
+}
+
+.container .slider-container>img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+.container .description {
+    line-height: 2rem;
+    font-size: large;
+}
+
+.dates {
+    width: 80%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.dates>p {
+    margin-top: 0;
+    font-size: x-large;
+}
+
+
+.places>p {
+    font-size: x-large;
+}
+
+.container .price {
+    font-size: xx-large;
+}
+
+.places-chosen {
+    margin-top: auto !important;
+    height: 50px;
+    width: 50%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.basket>p {
+    font-size: larger;
+}
+
+.places-chosen>button {
+    height: 100%;
+    aspect-ratio: 1/1;
+    border: none;
+    border-radius: 10px;
+}
+
+
+.add-place {
+    margin-left: 10px;
+    background-color: rgb(68, 217, 68);
+}
+
+.remove-place {
+    background-color: rgb(255, 59, 59);
+    margin-right: 10px;
+}
+
+.add-to-basket {
+    margin-top: 1vw !important;
+    border: none;
+    width: 50%;
+    height: 50px;
+    border-radius: 10px;
+    font-size: larger;
+    /* color: white; */
+    font-weight: bold;
+    background-color: rgba(40, 169, 250, 0.7);
+    justify-self: flex-end;
+}
+
+.basket>p {
+    margin: 0;
+    text-align: center;
+}
+
+button>i {
+    font-size: xx-large;
+}
+
+.background-green {
+    background: linear-gradient(120deg, rgba(68, 217, 68, 0.4), rgba(68, 217, 68, 0.2));
+}
+
+.background-red {
+    background: linear-gradient(120deg, rgba(217, 68, 68, 0.6), rgba(217, 68, 68, 0.2));
+}
+
+app-excursion-review {
+    width: 100%;
+    margin-top: 8vh;
+}

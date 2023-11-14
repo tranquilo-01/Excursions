@@ -1,0 +1,11 @@
+<div class="container">
+  <p id="email">{{ user.email }}</p>
+  <p id="uid">uid: {{ user.uid }}</p>
+  <p id="admin" (click)="onSwitchAdmin()">admin: {{ user.admin }}</p>
+  <p id="manager" (click)="onSwitchManager()">manager: {{ user.manager }}</p>
+  <p id="user" (click)="onSwitchUser()">user: {{ user.user }}</p>
+  <p id="banned" (click)="onSwitchBanned()">banned: {{ user.banned }}</p>
+  <button id="save-bttn" [disabled]="!canSave()" (click)="onSave()">
+    SAVE
+  </button>
+</div>

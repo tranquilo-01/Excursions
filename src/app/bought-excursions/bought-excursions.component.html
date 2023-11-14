@@ -1,0 +1,38 @@
+<div class="container">
+  <app-bought-filter *ngIf="excursions.length > 0"></app-bought-filter>
+  <div class="content">
+    <div class="empty" *ngIf="excursions.length == 0">
+      It looks like you haven't bought any excursions yet :(
+    </div>
+    <div
+      class="excursion"
+      *ngFor="
+        let exc of excursions | filterBought : boughtFilterService;
+        let i = index
+      "
+    >
+      <div class="name">{{ excursions[i].name }}</div>
+      <div class="dates">
+        {{ excursions[i].startDate }} -
+        {{ excursions[i].endDate }}
+      </div>
+      <div class="unitprice">
+        {{ excursions[i].unitPrice | currency }}
+      </div>
+      <div class="places-reserved">
+        <i class="fa-regular fa-user"></i>
+        {{ excursions[i].placesReserved }}
+      </div>
+      <div class="excursion-price">
+        {{ excursions[i].unitPrice * excursions[i].placesReserved | currency }}
+      </div>
+      <div class="bought-date">
+        {{ excursions[i].boughtDate }}
+      </div>
+      <!-- TODO - bought model -->
+      <div class="status">
+        {{ onGetStatus(exc.startDate, exc.endDate) }}
+      </div>
+    </div>
+  </div>
+</div>

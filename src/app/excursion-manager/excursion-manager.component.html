@@ -1,0 +1,12 @@
+<div class="container">
+  <button id="new-excursion-button" (click)="toggleNewExcursionForm()">
+    CREATE NEW EXCURSION
+  </button>
+  <app-create-excursion *ngIf="newExcursionFormOpened"></app-create-excursion>
+  <div *ngFor="let excursion of excursionsData.excursions; let i = index">
+    <hr />
+    <app-manager-excursion-details
+      [excursion]="excursion"
+    ></app-manager-excursion-details>
+  </div>
+</div>

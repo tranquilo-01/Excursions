@@ -1,0 +1,96 @@
+<div class="container">
+  <form (ngSubmit)="onUpdate(f)" #f="ngForm">
+    <label for="name">Excursion name: </label>
+    <input
+      type="text"
+      [ngModel]="excursion.name"
+      name="name"
+      required
+      pattern="[a-zA-Z ]*"
+      id="name"
+    />
+    <div class="gap"></div>
+    <label for="country">Country: </label>
+    <input
+      type="text"
+      [ngModel]="excursion.country"
+      name="country"
+      required
+      pattern="[a-zA-Z ]*"
+      id="country"
+    />
+    <div class="gap"></div>
+    <label for="startDate">Start date (yyyy-mm-dd): </label>
+    <input
+      type="text"
+      [ngModel]="excursion.startDate"
+      name="startDate"
+      required
+      pattern="\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])"
+      id="startDate"
+    />
+    <div class="gap"></div>
+    <label for="endDate">End date: </label>
+    <input
+      type="text"
+      [ngModel]="excursion.endDate"
+      name="endDate"
+      required
+      pattern="\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])"
+      id="endDate"
+    />
+    <div class="gap"></div>
+    <label for="price">Price: </label>
+    <input
+      type="text"
+      [ngModel]="excursion.price"
+      name="price"
+      required
+      pattern="\d+(?:\.\d{2})?"
+      id="price"
+    />
+    <div class="gap"></div>
+    <label for="numberOfPlaces">Number of places:</label>
+    <input
+      type="text"
+      [ngModel]="excursion.numberOfPlaces"
+      name="numberOfPlaces"
+      required
+      pattern="\d+"
+      id="numberOfPlaces"
+    />
+    <div class="gap"></div>
+    <label for="description">Description: </label>
+    <textarea
+      rows="5"
+      [ngModel]="excursion.description"
+      name="description"
+      type="text"
+      required
+      id="description"
+    ></textarea>
+    <div class="gap"></div>
+    <label for="imgLink">Image link: </label>
+    <input
+      type="text"
+      [ngModel]="excursion.imgLink"
+      name="imgLink"
+      required
+      id="imgLink"
+    />
+    <div class="gap"></div>
+    <label for="details_image_links">Image links for details: </label>
+    <textarea
+      rows="5"
+      [ngModel]="photostring"
+      name="details_image_links"
+      type="text"
+      required
+      id="details_image_links"
+    ></textarea>
+    <div class="gap"></div>
+    <button class="submit" [disabled]="!f.valid || !f.dirty" type="submit">
+      Submit
+    </button>
+  </form>
+</div>

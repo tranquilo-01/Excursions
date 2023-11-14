@@ -1,0 +1,82 @@
+<div class="container">
+  <div class="reviews-header">
+    <h3>Reviews:</h3>
+    <button (click)="toggleForm()" [disabled]="!canReview()">
+      Add a review
+    </button>
+  </div>
+
+  <div class="review" *ngFor="let review of reviews; let i = index">
+    <div class="review-header">
+      <p class="nick">{{ reviews[i].nick }}</p>
+      <p class="date">{{ reviews[i].date }}</p>
+    </div>
+    <div class="text">
+      <p>{{ reviews[i].review }}</p>
+    </div>
+  </div>
+
+  <div class="form-container" *ngIf="showForm">
+    <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+      <button class="close" (click)="toggleForm()">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <label for="name">Excursion name: </label>
+      <input
+        type="text"
+        [ngModel]="name"
+        [disabled]="true"
+        name="name"
+        required
+        pattern="[a-zA-Z ]*"
+        id="name"
+      />
+      <div class="gap"></div>
+      <label for="nick">Nick: </label>
+      <input
+        type="text"
+        [ngModel]="email"
+        disabled="true"
+        name="nick"
+        #nick="ngModel"
+        required
+        id="nick"
+      />
+      <div class="gap"></div>
+      <label for="date">Date (yyyy-mm-dd): </label>
+      <input
+        type="text"
+        ngModel
+        name="date"
+        #date="ngModel"
+        pattern="\d{4}-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])"
+        id="date"
+      />
+      <div class="gap"></div>
+      <label for="review">Description: </label>
+      <textarea
+        rows="5"
+        ngModel
+        name="review"
+        #review="ngModel"
+        type="text"
+        required
+        pattern=".{50,500}"
+        id="review"
+      ></textarea>
+      <div class="gap"></div>
+      <div class="validation-output">
+        <p *ngIf="nick.dirty && !nick.valid">
+          Provide a nick containing only letters and numbers!
+        </p>
+        <p *ngIf="date.dirty && !date.valid">
+          Provide a date in format yyyy-MM-dd!
+        </p>
+        <p *ngIf="review.dirty && !review.valid">
+          Review length must be between 50 and 500 characters!
+        </p>
+      </div>
+      <button class="submit" [disabled]="!f.valid" type="submit">Submit</button>
+    </form>
+  </div>
+</div>

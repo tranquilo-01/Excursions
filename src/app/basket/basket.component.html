@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="empty" *ngIf="basketData.basket.length == 0">
+    The basket is empty
+  </div>
+  <div class="excursion" *ngFor="let exc of basketData.basket; let i = index">
+    <div class="name">{{ basketData.basket[i].name }}</div>
+    <div class="dates">
+      {{ basketData.basket[i].startDate }} - {{ basketData.basket[i].endDate }}
+    </div>
+    <div class="unitprice">{{ basketData.basket[i].unitPrice | currency }}</div>
+    <div class="places-reserved">
+      <i class="fa-regular fa-user"></i>
+      {{ basketData.basket[i].placesReserved }}
+    </div>
+    <div class="excursion-price">
+      {{
+        basketData.basket[i].unitPrice * basketData.basket[i].placesReserved
+          | currency
+      }}
+    </div>
+    <div class="buttons">
+      <button class="buy-bttn" (click)="onBuy(i)">Buy</button>
+      <button class="remove-bttn" (click)="onDelete(i)">Remove</button>
+    </div>
+  </div>
+  <div class="excursion totals" *ngIf="basketData.basket.length > 0">
+    <div class="total-price">Total price: {{ totalPrice | currency }}</div>
+    <div class="buttons">
+      <button class="buy-bttn" (click)="onBuyAll()">Buy All</button>
+      <button class="remove-bttn" (click)="onClearAll()">Clear All</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,156 @@
+header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr;
+  grid-template-areas: "logo menu account";
+  height: 8vh;
+  background-color: rgb(98, 180, 227);
+}
+
+.menu {
+  grid-area: menu;
+  gap: 2vw;
+}
+
+a {
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav {
+  justify-content: space-evenly !important;
+}
+
+header > * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  grid-area: logo;
+}
+
+.name {
+  font-size: x-large;
+  margin: 0;
+  color: white;
+}
+
+.nav {
+  grid-area: account;
+  height: 100%;
+  gap: 1vw;
+}
+
+.nav-bttn:hover {
+  color: rgb(98, 180, 227);
+  background-color: white;
+}
+
+.nav > div > button {
+  border: none;
+  background-color: rgb(98, 180, 227);
+  height: 100%;
+  width: 100%;
+  font-weight: bold;
+  font-size: large;
+  color: white;
+  padding: 0;
+}
+
+.fa {
+  text-align: right;
+}
+
+.dropdown-menu-content {
+  display: none;
+}
+
+.dropdown-services-content {
+  display: none;
+}
+
+.dropdown-menu-div:hover .dropdown-menu-content {
+  display: flex;
+}
+
+.dropdown-services-div:hover .dropdown-services-content {
+  display: block;
+}
+
+.arrow_up {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  position: absolute;
+  top: -12px;
+  left: 0;
+  border-bottom: 15px solid white;
+}
+
+.account {
+  grid-area: account;
+  gap: 1vw;
+}
+
+.account > button {
+  height: 70%;
+  padding: 3px;
+  border-radius: 3vw;
+  font-weight: bold;
+  font-size: medium;
+}
+
+.user-info > i {
+  font-size: x-large;
+}
+
+@media (max-width: 1024px) {
+  .nav > div > button {
+    font-size: medium;
+  }
+
+  .account button {
+    font-size: small;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav > div > button {
+    font-size: small;
+  }
+  .account button {
+    font-size: small;
+  }
+
+  map .name {
+    display: none;
+  }
+
+  header {
+    grid-template-columns: 0fr 6fr 3fr;
+    grid-template-areas: "logo menu account";
+  }
+}
+
+@media (max-width: 425px) {
+  .nav > div > button {
+    font-size: x-small;
+  }
+
+  .name {
+    display: none;
+  }
+
+  .account button {
+    font-size: x-small;
+  }
+
+  header {
+    grid-template-columns: 0fr 2fr 3fr;
+    grid-template-areas: "logo menu account";
+  }
+}

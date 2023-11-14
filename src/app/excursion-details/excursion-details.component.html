@@ -1,0 +1,68 @@
+<div class="container">
+  <h1 class="title">{{ excursions[idx].name }}</h1>
+  <h2 class="location">{{ excursions[idx].country | uppercase }}</h2>
+  <div class="slider-container">
+    <img *ngFor="let url of photos[idx].urls; let i = index" [src]="url" />
+  </div>
+  <p class="description">
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque nam soluta
+    assumenda pariatur possimus atque, explicabo beatae sapiente, ad, nulla ea
+    dolore praesentium facilis modi deleniti. Optio eius veniam libero nostrum
+    sequi facilis id excepturi exercitationem maxime? Quaerat sapiente
+    voluptatem provident aperiam molestiae tempora earum libero nesciunt, nam
+    animi perferendis minima commodi magni! Officiis, facere dolorum, nemo eum
+    rerum sapiente fugit vitae natus perferendis pariatur modi nobis quaerat.
+    Repellat exercitationem consequuntur aliquid non voluptates et cum aperiam
+    atque, unde distinctio officia quos voluptatum. Magni ipsam numquam
+    assumenda, vel fuga blanditiis corporis autem doloribus pariatur, non eaque
+    odio optio quo nesciunt?
+  </p>
+  <div class="dates">
+    <p class="start-date">From: {{ excursion.startDate }}</p>
+    <p class="end-date">To: {{ excursion.endDate }}</p>
+  </div>
+  <div class="places">
+    <p
+      class="number-of-places"
+      [ngStyle]="{ color: excursion.numberOfPlaces < 4 ? 'red' : 'black' }"
+    >
+      Remaining places:
+      <i class="fa-regular fa-user"> {{ excursion.numberOfPlaces }}</i>
+    </p>
+  </div>
+  <p class="price">Price: {{ excursions[idx].price | currency }}</p>
+  <div class="places-chosen">
+    <button
+      class="remove-place"
+      [disabled]="placesChosen <= 0"
+      (click)="onRemovePlace()"
+    >
+      <i class="fa-solid fa-minus"></i>
+    </button>
+    <div class="basket">
+      <p><i class="fa-solid fa-basket-shopping"></i></p>
+      <p>{{ placesChosen }}</p>
+    </div>
+    <button
+      class="add-place"
+      [disabled]="placesChosen >= excursion.numberOfPlaces"
+      (click)="onAddPlace()"
+      [ngStyle]="{
+        color: excursion.numberOfPlaces - placesChosen < 4 ? 'red' : 'black'
+      }"
+    >
+      <i class="fa-solid fa-plus"></i>
+    </button>
+  </div>
+  <button
+    class="add-to-basket"
+    [disabled]="placesChosen == 0"
+    (click)="updateBasket()"
+  >
+    Update basket
+  </button>
+
+  <!-- <hr> -->
+
+  <app-excursion-review></app-excursion-review>
+</div>

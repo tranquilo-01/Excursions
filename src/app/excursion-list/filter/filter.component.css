@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+label {
+  font-size: small;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+input {
+  margin-bottom: 5px;
+}

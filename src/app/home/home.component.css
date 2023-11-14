@@ -1,0 +1,76 @@
+.main-container {
+  position: relative;
+  width: 80%;
+  margin: auto;
+  z-index: 1;
+}
+
+#title {
+  text-align: center;
+  font-size: 5vh;
+  color: white;
+}
+
+#background {
+  object-fit: cover;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -100;
+}
+
+#description {
+  color: white;
+}
+
+#list {
+  margin: auto;
+  width: fit-content;
+}
+
+#list > ul {
+  color: white;
+  margin: auto;
+  font-size: large;
+}
+
+#list > ul > li {
+  line-height: 3vh;
+}
+
+.map {
+  height: 300px;
+  width: 400px;
+  background-color: darkslategray;
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact {
+  color: white;
+  text-align: center;
+}
+
+#list2 {
+  margin: auto;
+  width: fit-content;
+  margin-bottom: 3vh;
+}
+
+#list2 > ul {
+  color: white;
+  margin: auto;
+  font-size: large;
+}
+
+@media (max-width: 768px) {
+  .map {
+    width: 80vw;
+    aspect-ratio: 1/1;
+  }
+}

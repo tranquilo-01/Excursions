@@ -1,0 +1,10 @@
+.container {
+  padding: 2vw;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+#new-excursion-button {
+  margin: auto;
+  align-self: center;
+}

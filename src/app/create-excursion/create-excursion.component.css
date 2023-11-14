@@ -1,0 +1,34 @@
+.container {
+    width: 80%;
+    height: 100%;
+    background-color: white;
+    padding: 1vw;
+    margin: auto;
+}
+
+
+form {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+input {
+    width: 30%;
+}
+
+.gap {
+    height: 1vw;
+}
+
+.submit {
+    width: 30%;
+    height: 3vw;
+}
+
+textarea {
+    width: 50%;
+}
+
+input.ng-invalid.ng-touched {
+    border: 2px solid red;
+}

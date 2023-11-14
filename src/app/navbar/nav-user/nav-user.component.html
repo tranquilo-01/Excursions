@@ -1,0 +1,4 @@
+<div class="dropdown-content dropdown-menu-content">
+  <a routerLink="/auth" *ngIf="!loggedIn">LOGIN/REGISTER</a>
+  <a (click)="logOut()" *ngIf="loggedIn">LOGOUT</a>
+</div>

@@ -1,0 +1,50 @@
+<header>
+  <div class="logo">
+    <p class="name" routerLink="/"><b>BRAND</b>NAME</p>
+  </div>
+  <div class="menu">
+    <a routerLink="/excursion-list">Excursion list</a>
+    <a *ngIf="authService.isLoggedIn()" routerLink="/bought-excursions"
+      >Bought excursions</a
+    >
+  </div>
+  <nav class="nav">
+    <div *ngIf="authService.isAdmin()" routerLink="/admin-view">
+      <button class="nav-bttn">ADMIN VIEW</button>
+    </div>
+    <div *ngIf="authService.canModify()">
+      <button class="nav-bttn" routerLink="/excursion-manager">
+        Manage excursions
+      </button>
+    </div>
+    <div class="dropdown-menu-div">
+      <button
+        class="dropdown-menu-bttn"
+        (mouseover)="basketOpen = true; userOpen = false; fetchBasket()"
+        routerLink="/basket"
+      >
+        <i class="fa-solid fa-basket-shopping"></i>
+      </button>
+      <app-nav-basket
+        *ngIf="basketOpen && !userOpen"
+        (mouseleave)="basketOpen = false"
+      ></app-nav-basket>
+    </div>
+
+    <a class="user-info"><i class="fa-solid fa-info"></i></a>
+
+    <div class="dropdown-menu-div">
+      <button
+        class="dropdown-menu-bttn"
+        (mouseover)="userOpen = true; basketOpen = false"
+      >
+        <i class="fa-solid fa-circle-user"></i>
+        <i *ngIf="authService.loggedIn"> {{ authService.userEmail }}</i>
+      </button>
+      <app-nav-user
+        *ngIf="userOpen && !basketOpen"
+        (mouseleave)="userOpen = false"
+      ></app-nav-user>
+    </div>
+  </nav>
+</header>
