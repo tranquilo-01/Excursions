@@ -1,7 +1,7 @@
 export const environment = {
   production: true,
   firebase: {
-    apiKey: "AIzaSyDl4RuTnW3GLGSRxK2KAusgqwMpuXGtAaE",
+    apiKey: "", //provide your api key
     authDomain: "wdai-excursions.firebaseapp.com",
     projectId: "wdai-excursions",
     storageBucket: "wdai-excursions.appspot.com",
